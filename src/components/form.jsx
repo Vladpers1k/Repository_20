@@ -21,34 +21,30 @@ const MyForm = () => {
   }
 
   return (
-    <div style={{ maxWidth: '400px', margin: '0 auto' }}>
-      <h2>Реєстраційна форма</h2>
+    <div className="form-container">
+      <h2 className="form-title">Реєстраційна форма</h2>
       <Formik initialValues={initialValues} validationSchema={validationSchema} onSubmit={handleSubmit}>
         {({ isSubmitting }) => (
-          <Form>
-            {}
-            <div>
+          <Form className="form">
+            <div className="form-group">
               <label htmlFor="name">Ім'я:</label>
               <Field type="text" name="name" placeholder="Введіть ім'я" id="name" />
-              <ErrorMessage name="name" component="div" style={{ color: 'red', fontSize: '14px' }} />
+              <ErrorMessage name="name" component="div" className="error-message" />
             </div>
 
-            {}
-            <div>
+            <div className="form-group">
               <label htmlFor="email">Електронна пошта:</label>
               <Field type="email" name="email" placeholder="Введіть email" id="email" />
-              <ErrorMessage name="email" component="div" style={{ color: 'red', fontSize: '14px' }} />
+              <ErrorMessage name="email" component="div" className="error-message" />
             </div>
 
-            {}
-            <div>
+            <div className="form-group">
               <label htmlFor="password">Пароль:</label>
               <Field type="password" name="password" placeholder="Введіть пароль" id="password" />
-              <ErrorMessage name="password" component="div" style={{ color: 'red', fontSize: '14px' }} />
+              <ErrorMessage name="password" component="div" className="error-message" />
             </div>
 
-            {}
-            <button type="submit" disabled={isSubmitting} style={{ marginTop: '10px' }}>
+            <button type="submit" disabled={isSubmitting} className="submit-button">
               Відправити
             </button>
           </Form>
